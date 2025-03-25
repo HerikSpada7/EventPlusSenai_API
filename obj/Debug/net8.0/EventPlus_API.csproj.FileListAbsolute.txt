@@ -1,0 +1,14 @@
+C:\Users\49984891860\Desktop\EventPlusSenai_API\EventPlus_API\obj\Debug\net8.0\EventPlus_API.csproj.AssemblyReference.cache
+C:\Users\49984891860\Desktop\EventPlusSenai_API\EventPlus_API\obj\Debug\net8.0\EventPlus_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\49984891860\Desktop\EventPlusSenai_API\EventPlus_API\obj\Debug\net8.0\EventPlus_API.AssemblyInfoInputs.cache
+C:\Users\49984891860\Desktop\EventPlusSenai_API\EventPlus_API\obj\Debug\net8.0\EventPlus_API.AssemblyInfo.cs
+C:\Users\49984891860\Desktop\EventPlusSenai_API\EventPlus_API\obj\Debug\net8.0\EventPlus_API.csproj.CoreCompileInputs.cache
+C:\Users\49984891860\Desktop\EventPlusSenai_API\EventPlus_API\obj\Debug\net8.0\EventPlus_API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\49984891860\Desktop\EventPlusSenai_API\EventPlus_API\obj\Debug\net8.0\EventPlus_API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\49984891860\Desktop\EventPlusSenai_API\obj\Debug\net8.0\EventPlus_API.csproj.AssemblyReference.cache
+C:\Users\49984891860\Desktop\EventPlusSenai_API\obj\Debug\net8.0\EventPlus_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\49984891860\Desktop\EventPlusSenai_API\obj\Debug\net8.0\EventPlus_API.AssemblyInfoInputs.cache
+C:\Users\49984891860\Desktop\EventPlusSenai_API\obj\Debug\net8.0\EventPlus_API.AssemblyInfo.cs
+C:\Users\49984891860\Desktop\EventPlusSenai_API\obj\Debug\net8.0\EventPlus_API.csproj.CoreCompileInputs.cache
+C:\Users\49984891860\Desktop\EventPlusSenai_API\obj\Debug\net8.0\EventPlus_API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\49984891860\Desktop\EventPlusSenai_API\obj\Debug\net8.0\EventPlus_API.MvcApplicationPartsAssemblyInfo.cache
