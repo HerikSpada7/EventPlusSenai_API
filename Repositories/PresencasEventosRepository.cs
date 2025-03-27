@@ -4,14 +4,24 @@ using EventPlus_API.Interfaces;
 
 namespace EventPlus_API.Repositories
 {
+    /// <summary>
+    /// Repositório para gerenciamento presenças dos eventos
+    /// </summary>
     public class PresencasRepository : IPresencasRepository
     {
         private readonly Contexts.EventosContext _context;
 
+        /// <summary>
+        /// Repositório para gerenciamento presenças dos eventos
+        /// </summary>
         public PresencasRepository(Contexts.EventosContext context)
         {
             _context = context;
         }
+
+        /// <summary>
+        /// Repositório para gerenciamento presenças dos eventos
+        /// </summary>
         public void Atualizar(Guid id, Presencas presencaEvento)
         {
             try
@@ -41,6 +51,10 @@ namespace EventPlus_API.Repositories
             }
         }
 
+
+        /// <summary>
+        /// Repositório para gerenciamento presenças dos eventos
+        /// </summary>
         public Presencas BuscarPorId(Guid id)
         {
             try
@@ -73,6 +87,10 @@ namespace EventPlus_API.Repositories
             }
         }
 
+
+        /// <summary>
+        /// Repositório para gerenciamento presenças dos eventos
+        /// </summary>
         public void Deletar(Guid id)
         {
             try
@@ -92,6 +110,10 @@ namespace EventPlus_API.Repositories
             }
         }
 
+
+        /// <summary>
+        /// Repositório para gerenciamento presenças dos eventos
+        /// </summary>
         public void Inscrever(Presencas inscricao)
         {
             try
@@ -108,6 +130,10 @@ namespace EventPlus_API.Repositories
             }
         }
 
+
+        /// <summary>
+        /// Repositório para gerenciamento presenças dos eventos
+        /// </summary>
         public List<Presencas> Listar()
         {
 
@@ -141,6 +167,10 @@ namespace EventPlus_API.Repositories
             }
         }
 
+
+        /// <summary>
+        /// Repositório para gerenciamento presenças dos eventos
+        /// </summary>
         public List<Presencas> ListarMinhas(Guid id)
         {
             return _context.Presencas

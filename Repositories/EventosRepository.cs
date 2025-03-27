@@ -5,14 +5,24 @@ using EventPlus_API.Interfaces;
 
 namespace EventPlus_API.Repositories
 {
+    /// <summary>
+    /// Repositório para gerenciamento de eventos
+    /// </summary>
     public class EventosRepository : IEventosRepository
     {
         private readonly EventosContext _context;
 
+        /// <summary>
+        /// Repositório para gerenciamento de eventos
+        /// </summary>
         public EventosRepository(EventosContext context)
         {
             _context = context;
         }
+
+        /// <summary>
+        /// Repositório para gerenciamento de eventos
+        /// </summary>
         public void Atualizar(Guid id, Eventos evento)
         {
             try
@@ -37,6 +47,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento de eventos
+        /// </summary>
         public Domains.Eventos BuscarPorId(Guid id)
         {
             try
@@ -64,6 +77,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento de eventos
+        /// </summary>
         public void Cadastrar(Domains.Eventos evento)
         {
             try
@@ -86,6 +102,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento de eventos
+        /// </summary>
         public void Deletar(Guid id)
         {
             try
@@ -105,6 +124,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento de eventos
+        /// </summary>
         public List<Domains.Eventos> Listar()
         {
             try
@@ -136,6 +158,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento de eventos
+        /// </summary>
         public List<Domains.Eventos> ListarPorId(Guid id)
         {
             try
@@ -175,7 +200,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
-
+        /// <summary>
+        /// Repositório para gerenciamento de eventos
+        /// </summary>
         public List<Domains.Eventos> ProximosEventos()
         {
             try

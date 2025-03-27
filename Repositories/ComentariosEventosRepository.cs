@@ -3,15 +3,24 @@ using EventPlus_API.Interfaces;
 
 namespace EventPlus_API.Repositories
 {
+    /// <summary>
+    /// Repositório para gerenciamento dos eventos de comentários.
+    /// </summary>
     public class ComentariosEventosRepository : IComentariosEventosRepository
     {
 
         private readonly Contexts.EventosContext _context;
 
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos de comentários.
+        /// </summary>
         public ComentariosEventosRepository(Contexts.EventosContext context)
         {
             _context = context;
         }
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos de comentários.
+        /// </summary>
         public ComentariosEventos BuscarPorIdUsuario(Guid idUsuario, Guid idEvento)
         {
             try
@@ -27,7 +36,7 @@ namespace EventPlus_API.Repositories
 
                         Usuario = new Usuarios
                         {
-                            NomeUsuario = c.Usuario!.NomeUsuario
+                            Nome = c.Usuario!.Nome
                         },
 
                         Evento = new Eventos
@@ -43,6 +52,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos de comentários.
+        /// </summary>
         public void Cadastrar(ComentariosEventos comentarioEvento)
         {
             try
@@ -59,6 +71,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos de comentários.
+        /// </summary>
         public void Deletar(Guid id)
         {
             try
@@ -78,6 +93,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos de comentários.
+        /// </summary>
         public List<ComentariosEventos> Listar(Guid id)
         {
             try
@@ -93,7 +111,7 @@ namespace EventPlus_API.Repositories
 
                         Usuario = new Usuarios
                         {
-                            NomeUsuario = c.Usuario!.NomeUsuario
+                            Nome = c.Usuario!.Nome
                         },
 
                         Evento = new Eventos
@@ -110,6 +128,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos de comentários.
+        /// </summary>
         public List<ComentariosEventos> ListarSomenteExibe(Guid id)
         {
             try
@@ -125,7 +146,7 @@ namespace EventPlus_API.Repositories
 
                         Usuario = new Usuarios
                         {
-                            NomeUsuario = c.Usuario!.NomeUsuario
+                            Nome = c.Usuario!.Nome
                         },
 
                         Evento = new Eventos

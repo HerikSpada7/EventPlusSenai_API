@@ -3,16 +3,25 @@ using EventPlus_API.Interfaces;
 
 namespace EventPlus_API.Repositories
 {
+    /// <summary>
+    /// Repositório para gerenciamento dos tipos dos eventos
+    /// </summary>
     public class TiposEventosRepository : ITiposEventosRepository
     {
 
         private readonly Contexts.EventosContext _context;
 
+        /// <summary>
+        /// Repositório para gerenciamento dos tipos dos eventos
+        /// </summary>
         public TiposEventosRepository(Contexts.EventosContext context)
         {
             _context = context;
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos tipos dos eventos
+        /// </summary>
         public void Atualizar(Guid id, TiposEventos tipoEvento)
         {
             try
@@ -34,6 +43,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos tipos dos eventos
+        /// </summary>
         public TiposEventos BuscarPorId(Guid id)
         {
             try
@@ -46,6 +58,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos tipos dos eventos
+        /// </summary>
         public void Cadastrar(TiposEventos tipoEvento)
         {
             try
@@ -62,6 +77,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos tipos dos eventos
+        /// </summary>
         public void Deletar(Guid id)
         {
             try
@@ -81,6 +99,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos tipos dos eventos
+        /// </summary>
         public List<TiposEventos> Listar()
         {
             try

@@ -1,5 +1,6 @@
 ﻿using EventPlus_API.Domains;
 using EventPlus_API.Interfaces;
+using EventPlus_API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventPlus_API.Controllers
@@ -20,12 +21,12 @@ namespace EventPlus_API.Controllers
         /// Endpoint para cadastrar novo evento
         /// </summary>
         [HttpPost]
-        public IActionResult Post(Presencas presencaRepository)
+        public IActionResult Post(Presencas presencaEvento)
         {
             try
             {
-                _presencaRepository.Inscrever(presencaRepository);
-                return Created();
+                _presencaRepository.Inscrever(presencaEvento);
+                return StatusCode(201);
             }
             catch (Exception error)
             {
@@ -59,8 +60,7 @@ namespace EventPlus_API.Controllers
         {
             try
             {
-                Presencas novaPresenca = _presencaRepository.BuscarPorId(id);
-                return Ok(novaPresenca);
+                return Ok(_presencaRepository.BuscarPorId(id));
             }
             catch (Exception error)
             {
@@ -72,11 +72,12 @@ namespace EventPlus_API.Controllers
         /// Endpoint para atualizar as presenças
         /// </summary>
         [HttpPut("{id}")]
-        public IActionResult Put(Guid id, Presencas presenca)
+        public IActionResult Put(Guid id, Presencas presencas)
         {
             try
             {
-                _presencaRepository.Atualizar(id, presenca);
+                _presencaRepository.Atualizar(id, presencas);
+
                 return NoContent();
             }
             catch (Exception error)
@@ -88,13 +89,12 @@ namespace EventPlus_API.Controllers
         /// <summary>
         /// Endpoint para fazer uma lista das presenças
         /// </summary>
-        [HttpGet()]
+        [HttpGet]
         public IActionResult Get()
         {
             try
             {
-                List<Presencas> listaPresencas = _presencaRepository.Listar();
-                return Ok(listaPresencas);
+                return Ok(_presencaRepository.Listar());
             }
             catch (Exception error)
             {
@@ -105,13 +105,12 @@ namespace EventPlus_API.Controllers
         /// <summary>
         /// Endpoint para fazer uma lista das minhas presenças
         /// </summary>
-        [HttpGet("ListarMinhasPresencas/{id}")]
+        [HttpGet("ListarMinhas/{id}")]
         public IActionResult Get(Guid id)
         {
             try
             {
-                List<Presencas> listaMinhasPresencas = _presencaRepository.ListarMinhas(id);
-                return Ok(listaMinhasPresencas);
+                return Ok(_presencaRepository.ListarMinhas(id));
             }
             catch (Exception error)
             {
@@ -119,5 +118,4 @@ namespace EventPlus_API.Controllers
             }
         }
     }
-}
 }

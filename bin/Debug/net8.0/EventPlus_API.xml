@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EventPlus_API</name>
+    </assembly>
+    <members>
+        <member name="M:EventPlus_API.Controllers.ComentariosEventoController.Post(EventPlus_API.Domains.ComentariosEventos)">
+            <summary>
+            Endpoint para cadastrar novo comentario do evento
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.ComentariosEventoController.Delete(System.Guid)">
+            <summary>
+            Endpoint para deletar novo comentario do evento
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.ComentariosEventoController.Get(System.Guid)">
+            <summary>
+            Endpoint para listar comentarios do evento
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.ComentariosEventoController.GetById(System.Guid,System.Guid)">
+            <summary>
+            Endpoint para buscar por id o comentario do usuario do evento
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.EventosController.Get">
+            <summary>
+            Endpoint para listar os eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.EventosController.ListById(System.Guid)">
+            <summary>
+            Endpoint para listar por ID um evento utilizando a presença
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.EventosController.GetNextEvents">
+            <summary>
+            Endpoint para listar eventos proximos da data atual
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.EventosController.GetById(System.Guid)">
+            <summary>
+            Endpoint para buscar por ID um evento
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.EventosController.Post(EventPlus_API.Domains.Eventos)">
+            <summary>
+            Endpoint para cadastrar eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.EventosController.Put(System.Guid,EventPlus_API.Domains.Eventos)">
+            <summary>
+            Endpoint para atualizar um evento
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.EventosController.Delete(System.Guid)">
+            <summary>
+            Endpoint para deletar um evento
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.LoginController.Login(EventPlus_API.DTO.LoginDTO)">
+            <summary>
+            Endpoint para Buscar um Login pelo seu id
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.PresencasController.Post(EventPlus_API.Domains.Presencas)">
+            <summary>
+            Endpoint para cadastrar novo evento
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.PresencasController.Delete(System.Guid)">
+            <summary>
+            Endpoint para deletar a presença
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.PresencasController.GetById(System.Guid)">
+            <summary>
+            Endpoint para buscar por Id a presença
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.PresencasController.Put(System.Guid,EventPlus_API.Domains.Presencas)">
+            <summary>
+            Endpoint para atualizar as presenças
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.PresencasController.Get">
+            <summary>
+            Endpoint para fazer uma lista das presenças
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.PresencasController.Get(System.Guid)">
+            <summary>
+            Endpoint para fazer uma lista das minhas presenças
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.TiposEventosController.Get">
+            <summary>
+            Endpoint para listar os tipos dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.TiposEventosController.Post(EventPlus_API.Domains.TiposEventos)">
+            <summary>
+            Endpoint para cadastrar novos tipos de evento
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.TiposEventosController.Put(System.Guid,EventPlus_API.Domains.TiposEventos)">
+            <summary>
+            Endpoint para atualizar o tipo do evento
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.TiposEventosController.Delete(System.Guid)">
+            <summary>
+            Endpoint para deletar o tipo do evento
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.TiposEventosController.Get(System.Guid)">
+            <summary>
+            Endpoint para buscar tipo do evento por Id
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Migrations.EventPlus_API">
+            <inheritdoc />
+        </member>
+        <member name="M:EventPlus_API.Migrations.EventPlus_API.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EventPlus_API.Migrations.EventPlus_API.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EventPlus_API.Migrations.EventPlus_API.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EventPlus_API.Repositories.ComentariosEventosRepository">
+            <summary>
+            Repositório para gerenciamento dos eventos de comentários.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.ComentariosEventosRepository.#ctor(EventPlus_API.Contexts.EventosContext)">
+            <summary>
+            Repositório para gerenciamento dos eventos de comentários.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.ComentariosEventosRepository.BuscarPorIdUsuario(System.Guid,System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos eventos de comentários.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.ComentariosEventosRepository.Cadastrar(EventPlus_API.Domains.ComentariosEventos)">
+            <summary>
+            Repositório para gerenciamento dos eventos de comentários.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.ComentariosEventosRepository.Deletar(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos eventos de comentários.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.ComentariosEventosRepository.Listar(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos eventos de comentários.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.ComentariosEventosRepository.ListarSomenteExibe(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos eventos de comentários.
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Repositories.EventosRepository">
+            <summary>
+            Repositório para gerenciamento de eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.EventosRepository.#ctor(EventPlus_API.Contexts.EventosContext)">
+            <summary>
+            Repositório para gerenciamento de eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.EventosRepository.Atualizar(System.Guid,EventPlus_API.Domains.Eventos)">
+            <summary>
+            Repositório para gerenciamento de eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.EventosRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Repositório para gerenciamento de eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.EventosRepository.Cadastrar(EventPlus_API.Domains.Eventos)">
+            <summary>
+            Repositório para gerenciamento de eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.EventosRepository.Deletar(System.Guid)">
+            <summary>
+            Repositório para gerenciamento de eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.EventosRepository.Listar">
+            <summary>
+            Repositório para gerenciamento de eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.EventosRepository.ListarPorId(System.Guid)">
+            <summary>
+            Repositório para gerenciamento de eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.EventosRepository.ProximosEventos">
+            <summary>
+            Repositório para gerenciamento de eventos
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Repositories.PresencasRepository">
+            <summary>
+            Repositório para gerenciamento presenças dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.PresencasRepository.#ctor(EventPlus_API.Contexts.EventosContext)">
+            <summary>
+            Repositório para gerenciamento presenças dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.PresencasRepository.Atualizar(System.Guid,EventPlus_API.Domains.Presencas)">
+            <summary>
+            Repositório para gerenciamento presenças dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.PresencasRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Repositório para gerenciamento presenças dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.PresencasRepository.Deletar(System.Guid)">
+            <summary>
+            Repositório para gerenciamento presenças dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.PresencasRepository.Inscrever(EventPlus_API.Domains.Presencas)">
+            <summary>
+            Repositório para gerenciamento presenças dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.PresencasRepository.Listar">
+            <summary>
+            Repositório para gerenciamento presenças dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.PresencasRepository.ListarMinhas(System.Guid)">
+            <summary>
+            Repositório para gerenciamento presenças dos eventos
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Repositories.TiposEventosRepository">
+            <summary>
+            Repositório para gerenciamento dos tipos dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.TiposEventosRepository.#ctor(EventPlus_API.Contexts.EventosContext)">
+            <summary>
+            Repositório para gerenciamento dos tipos dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.TiposEventosRepository.Atualizar(System.Guid,EventPlus_API.Domains.TiposEventos)">
+            <summary>
+            Repositório para gerenciamento dos tipos dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.TiposEventosRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos tipos dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.TiposEventosRepository.Cadastrar(EventPlus_API.Domains.TiposEventos)">
+            <summary>
+            Repositório para gerenciamento dos tipos dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.TiposEventosRepository.Deletar(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos tipos dos eventos
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.TiposEventosRepository.Listar">
+            <summary>
+            Repositório para gerenciamento dos tipos dos eventos
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Repositories.webapi.event_.Repositories.TiposUsuariosRepository">
+            <summary>
+            Repositório para gerenciamento dos tipos dos usuario.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.webapi.event_.Repositories.TiposUsuariosRepository.#ctor(EventPlus_API.Contexts.EventosContext)">
+            <summary>
+            Repositório para gerenciamento dos tipos dos usuario.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.webapi.event_.Repositories.TiposUsuariosRepository.Atualizar(System.Guid,EventPlus_API.Domains.TiposUsuarios)">
+            <summary>
+            Repositório para gerenciamento dos tipos dos usuario.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.webapi.event_.Repositories.TiposUsuariosRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos tipos dos usuario.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.webapi.event_.Repositories.TiposUsuariosRepository.Cadastrar(EventPlus_API.Domains.TiposUsuarios)">
+            <summary>
+            Repositório para gerenciamento dos tipos dos usuario.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.webapi.event_.Repositories.TiposUsuariosRepository.Deletar(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos tipos dos usuario.
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.webapi.event_.Repositories.TiposUsuariosRepository.Listar">
+            <summary>
+            Repositório para gerenciamento dos tipos dos usuario.
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Repositories.UsuariosRepository">
+            <summary>
+            Repositório para gerenciamento dos usuarios
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.UsuariosRepository.#ctor(EventPlus_API.Contexts.EventosContext)">
+            <summary>
+            Repositório para gerenciamento dos usuarios
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.UsuariosRepository.BuscarPorEmailESenha(System.String,System.String)">
+            <summary>
+            Repositório para gerenciamento dos usuarios
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.UsuariosRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos usuarios
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.UsuariosRepository.Cadastrar(EventPlus_API.Domains.Usuarios)">
+            <summary>
+            Repositório para gerenciamento dos usuarios
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Repositories.UsuariosRepository.Listar">
+            <summary>
+            Repositório para gerenciamento dos usuarios
+            </summary>
+        </member>
+    </members>
+</doc>

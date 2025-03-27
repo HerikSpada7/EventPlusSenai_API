@@ -1,5 +1,6 @@
 ﻿using EventPlus_API.Domains;
 using EventPlus_API.Interfaces;
+using EventPlus_API.Repositories.webapi.event_.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventPlus_API.Controllers
@@ -10,43 +11,19 @@ namespace EventPlus_API.Controllers
     public class UsuariosController : ControllerBase
     {
         private readonly IUsuarioRepository _usuarioRepository;
-
         public UsuariosController(IUsuarioRepository usuarioRepository)
         {
             _usuarioRepository = usuarioRepository;
         }
 
-        /// <summary>
-        /// Endpoint para cadastrar novo usuario
-        /// </summary>
         [HttpPost]
-        public IActionResult Post(Usuarios novoUsuario)
+        public IActionResult Post(Usuarios usuario)
         {
             try
             {
-                _usuarioRepository.Cadastrar(novoUsuario);
+                _usuarioRepository.Cadastrar(usuario);
 
-                return StatusCode(201, novoUsuario);
-
-            }
-            catch (Exception error)
-            {
-                return BadRequest(error.Message);
-            }
-
-
-        }
-
-        /// <summary>
-        /// Endpoint para buscar usuario por Id
-        /// </summary>
-        [HttpGet("BuscarPorId/{id}")]
-        public IActionResult GetById(Guid id)
-        {
-            try
-            {
-                Usuarios novoUsuario = _usuarioRepository.BuscarPorId(id);
-                return Ok(novoUsuario);
+                return StatusCode(201, usuario);
             }
             catch (Exception error)
             {
@@ -54,19 +31,17 @@ namespace EventPlus_API.Controllers
             }
         }
 
-        [HttpGet("BuscarPorEmailESenha/{email}, {senha}")]
-        public IActionResult Get(string email, string senha)
+        [HttpGet]
+        public IActionResult Get()
         {
             try
             {
-                Usuarios novoUsuario = _usuarioRepository.BuscarPorEmailESenha(email, senha);
-                return Ok(novoUsuario);
+                return Ok(_usuarioRepository.Listar());
             }
-            catch (Exception error)
+            catch (Exception e)
             {
-                return BadRequest(error.Message);
+                return BadRequest(e.Message);
             }
         }
     }
-}
 }

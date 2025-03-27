@@ -1,18 +1,28 @@
-﻿using EventPlus_API.Domains;
+﻿using EventPlus_API.Contexts;
+using EventPlus_API.Domains;
 using EventPlus_API.Interfaces;
 using EventPlus_API.Utils;
 
 namespace EventPlus_API.Repositories
 {
+    /// <summary>
+    /// Repositório para gerenciamento dos usuarios
+    /// </summary>
     public class UsuariosRepository : IUsuarioRepository
     {
-        private readonly Contexts.EventosContext _context;
+        private readonly EventosContext _context;
 
-        public UsuariosRepository(Contexts.EventosContext context)
+        /// <summary>
+        /// Repositório para gerenciamento dos usuarios
+        /// </summary>
+        public UsuariosRepository(EventosContext context)
         {
             _context = context;
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos usuarios
+        /// </summary>
         public Usuarios BuscarPorEmailESenha(string email, string senha)
         {
             try
@@ -21,7 +31,7 @@ namespace EventPlus_API.Repositories
                     .Select(u => new Usuarios
                     {
                         IdUsuario = u.IdUsuario,
-                        NomeUsuario = u.NomeUsuario,
+                        Nome = u.Nome,
                         Email = u.Email,
                         Senha = u.Senha,
 
@@ -48,6 +58,10 @@ namespace EventPlus_API.Repositories
                 throw;
             }
         }
+
+        /// <summary>
+        /// Repositório para gerenciamento dos usuarios
+        /// </summary>
         public Usuarios BuscarPorId(Guid id)
         {
             try
@@ -56,7 +70,7 @@ namespace EventPlus_API.Repositories
                     .Select(u => new Usuarios
                     {
                         IdUsuario = u.IdUsuario,
-                        NomeUsuario = u.NomeUsuario,
+                        Nome = u.Nome,
                         Email = u.Email,
                         Senha = u.Senha,
 
@@ -81,6 +95,9 @@ namespace EventPlus_API.Repositories
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos usuarios
+        /// </summary>
         public void Cadastrar(Usuarios usuario)
         {
             try
@@ -94,6 +111,23 @@ namespace EventPlus_API.Repositories
 
 
                 _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Repositório para gerenciamento dos usuarios
+        /// </summary>
+        public List<Usuarios> Listar()
+        {
+            try
+            {
+                return _context.Usuarios
+                    .OrderBy(tp => tp.Nome)
+                    .ToList();
             }
             catch (Exception)
             {

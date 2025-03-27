@@ -1,94 +1,119 @@
-﻿using EventPlus_API.Domains;
+﻿using EventPlus_API.Contexts;
+using EventPlus_API.Domains;
 using EventPlus_API.Interfaces;
 
 namespace EventPlus_API.Repositories
 {
-    public class TiposUsuariosRepository : ITiposUsuariosRepository
+    namespace webapi.event_.Repositories
     {
-        private readonly Contexts.EventosContext _context;
-
-        public TiposUsuariosRepository(Contexts.EventosContext context)
+        /// <summary>
+        /// Repositório para gerenciamento dos tipos dos usuario.
+        /// </summary>
+        public class TiposUsuariosRepository : ITiposUsuariosRepository
         {
-            _context = context;
-        }
+            private readonly EventosContext _context;
 
-        public void Atualizar(Guid id, TiposUsuarios tipoUsuario)
-        {
-            try
+            /// <summary>
+            /// Repositório para gerenciamento dos tipos dos usuario.
+            /// </summary>
+            public TiposUsuariosRepository(EventosContext context)
             {
-                TiposUsuarios tipoBuscado = _context.TiposUsuarios.Find(id)!;
+                _context = context;
+            }
 
-                if (tipoBuscado != null)
+            /// <summary>
+            /// Repositório para gerenciamento dos tipos dos usuario.
+            /// </summary>
+            public void Atualizar(Guid id, TiposUsuarios tipoUsuario)
+            {
+                try
                 {
-                    tipoBuscado.TituloTipoUsuario = tipoUsuario.TituloTipoUsuario;
+                    TiposUsuarios tipoBuscado = _context.TiposUsuarios.Find(id)!;
+
+                    if (tipoBuscado != null)
+                    {
+                        tipoBuscado.TituloTipoUsuario = tipoUsuario.TituloTipoUsuario;
+                    }
+
+                    _context.TiposUsuarios.Update(tipoBuscado!);
+
+                    _context.SaveChanges();
                 }
-
-                _context.TiposUsuarios.Update(tipoBuscado!);
-
-                _context.SaveChanges();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public TiposUsuarios BuscarPorId(Guid id)
-        {
-            try
-            {
-                return _context.TiposUsuarios.Find(id)!;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public void Cadastrar(TiposUsuarios tipoUsuario)
-        {
-            try
-            {
-                tipoUsuario.IdTipoUsuario = Guid.NewGuid();
-
-                _context.TiposUsuarios.Add(tipoUsuario);
-
-                _context.SaveChanges();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public void Deletar(Guid id)
-        {
-            try
-            {
-                TiposUsuarios tipoBuscado = _context.TiposUsuarios.Find(id)!;
-
-                if (tipoBuscado != null)
+                catch (Exception)
                 {
-                    _context.TiposUsuarios.Remove(tipoBuscado);
+                    throw;
                 }
+            }
 
-                _context.SaveChanges();
-            }
-            catch (Exception)
+            /// <summary>
+            /// Repositório para gerenciamento dos tipos dos usuario.
+            /// </summary>
+            public TiposUsuarios BuscarPorId(Guid id)
             {
-                throw;
+                try
+                {
+                    return _context.TiposUsuarios.Find(id)!;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
-        }
 
-        public List<TiposUsuarios> Listar()
-        {
-            try
+            /// <summary>
+            /// Repositório para gerenciamento dos tipos dos usuario.
+            /// </summary>
+            public void Cadastrar(TiposUsuarios tipoUsuario)
             {
-                return _context.TiposUsuarios.ToList();
+                try
+                {
+                    tipoUsuario.IdTipoUsuario = Guid.NewGuid();
+
+                    _context.TiposUsuarios.Add(tipoUsuario);
+
+                    _context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
-            catch (Exception)
+
+            /// <summary>
+            /// Repositório para gerenciamento dos tipos dos usuario.
+            /// </summary>
+            public void Deletar(Guid id)
             {
-                throw;
+                try
+                {
+                    TiposUsuarios tipoBuscado = _context.TiposUsuarios.Find(id)!;
+
+                    if (tipoBuscado != null)
+                    {
+                        _context.TiposUsuarios.Remove(tipoBuscado);
+                    }
+
+                    _context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+
+            /// <summary>
+            /// Repositório para gerenciamento dos tipos dos usuario.
+            /// </summary>
+            public List<TiposUsuarios> Listar()
+            {
+                try
+                {
+                    return _context.TiposUsuarios.ToList();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
         }
     }

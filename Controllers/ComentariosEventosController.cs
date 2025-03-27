@@ -7,85 +7,79 @@ namespace EventPlus_API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class ComentariosEventosController : ControllerBase
+    public class ComentariosEventoController : ControllerBase
     {
-        [Route("api/[controller]")]
-        [ApiController]
-        [Produces("application/json")]
-        public class ComentarioEventoController : ControllerBase
+        private readonly IComentariosEventosRepository _comentarioEventoRepository;
+
+        public ComentariosEventoController(IComentariosEventosRepository comentarioEventoRepository)
         {
-            private readonly IComentariosEventosRepository _comentarioEventoRepository;
+            _comentarioEventoRepository = comentarioEventoRepository;
+        }
 
-            public ComentarioEventoController(IComentariosEventosRepository comentarioEventoRepository)
+        /// <summary>
+        /// Endpoint para cadastrar novo comentario do evento
+        /// </summary>
+        [HttpPost]
+        public IActionResult Post(ComentariosEventos novoComentarioEvento)
+        {
+            try
             {
-                _comentarioEventoRepository = comentarioEventoRepository;
+                _comentarioEventoRepository.Cadastrar(novoComentarioEvento);
+                return Created();
             }
-
-            /// <summary>
-            /// Endpoint para cadastrar novo comentario do evento
-            /// </summary>
-            [HttpPost]
-            public IActionResult Post(ComentariosEventos novoComentarioEvento)
+            catch (Exception error)
             {
-                try
-                {
-                    _comentarioEventoRepository.Cadastrar(novoComentarioEvento);
-                    return Created();
-                }
-                catch (Exception error)
-                {
-                    return BadRequest(error.Message);
-                }
+                return BadRequest(error.Message);
             }
+        }
 
-            /// <summary>
-            /// Endpoint para deletar novo comentario do evento
-            /// </summary>
-            [HttpDelete("{id}")]
-            public IActionResult Delete(Guid id)
+        /// <summary>
+        /// Endpoint para deletar novo comentario do evento
+        /// </summary>
+        [HttpDelete("{id}")]
+        public IActionResult Delete(Guid id)
+        {
+            try
             {
-                try
-                {
-                    _comentarioEventoRepository.Deletar(id);
-                    return NoContent();
-                }
-                catch (Exception error)
-                {
-                    return BadRequest(error.Message);
-                }
+                _comentarioEventoRepository.Deletar(id);
+                return NoContent();
             }
-
-            /// <summary>
-            /// Endpoint para listar comentarios do evento
-            /// </summary>
-            [HttpGet]
-            public IActionResult Get(Guid id)
+            catch (Exception error)
             {
-                try
-                {
-                    return Ok(_comentarioEventoRepository.Listar(id));
-                }
-                catch (Exception error)
-                {
-                    return BadRequest(error.Message);
-                }
+                return BadRequest(error.Message);
             }
+        }
 
-            /// <summary>
-            /// Endpoint para buscar por id o comentario do usuario do evento
-            /// </summary>
-            [HttpGet("BuscarPorIdUsuario/{UsuarioID},{EventoID}")]
-            public IActionResult GetById(Guid UsuarioID, Guid EventoID)
+        /// <summary>
+        /// Endpoint para listar comentarios do evento
+        /// </summary>
+        [HttpGet]
+        public IActionResult Get(Guid id)
+        {
+            try
             {
-                try
-                {
-                    ComentariosEventos novoComentarioEvento = _comentarioEventoRepository.BuscarPorIdUsuario(UsuarioID, EventoID);
-                    return Ok(novoComentarioEvento);
-                }
-                catch (Exception error)
-                {
-                    return BadRequest(error.Message);
-                }
+                return Ok(_comentarioEventoRepository.Listar(id));
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error.Message);
+            }
+        }
+
+        /// <summary>
+        /// Endpoint para buscar por id o comentario do usuario do evento
+        /// </summary>
+        [HttpGet("BuscarPorIdUsuario/{UsuarioID},{EventoID}")]
+        public IActionResult GetById(Guid UsuarioID, Guid EventoID)
+        {
+            try
+            {
+                ComentariosEventos novoComentarioEvento = _comentarioEventoRepository.BuscarPorIdUsuario(UsuarioID, EventoID);
+                return Ok(novoComentarioEvento);
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error.Message);
             }
         }
     }
