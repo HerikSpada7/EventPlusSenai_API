@@ -21,5 +21,9 @@ namespace EventPlus_API.Interfaces
         /// <summary>
         /// </summary>
         ComentariosEventos BuscarPorIdUsuario(Guid idUsuario, Guid idEvento);
+
+        /// <summary>
+        /// </summary>
+        List<ComentariosEventos> ListarSomenteExibe(Guid id);
     }
 }
