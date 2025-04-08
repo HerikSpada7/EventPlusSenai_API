@@ -183,3 +183,8 @@ C:\Users\49984891860\Desktop\EventPlusSenai_API\obj\Debug\net8.0\EventPlus_API.g
 C:\Users\49984891860\Desktop\EventPlusSenai_API\obj\Debug\net8.0\ref\EventPlus_API.dll
 C:\Users\49984891860\Desktop\EventPlusSenai_API\bin\Debug\net8.0\EventPlus_API.xml
 C:\Users\49984891860\Desktop\EventPlusSenai_API\obj\Debug\net8.0\EventPlus_API.xml
+C:\Users\49984891860\Desktop\EventPlusSenai_API\bin\Debug\net8.0\Azure.AI.ContentSafety.dll
+C:\Users\49984891860\Desktop\EventPlusSenai_API\bin\Debug\net8.0\Microsoft.Azure.CognitiveServices.ContentModerator.dll
+C:\Users\49984891860\Desktop\EventPlusSenai_API\bin\Debug\net8.0\Microsoft.Rest.ClientRuntime.dll
+C:\Users\49984891860\Desktop\EventPlusSenai_API\bin\Debug\net8.0\Microsoft.Rest.ClientRuntime.Azure.dll
+C:\Users\49984891860\Desktop\EventPlusSenai_API\bin\Debug\net8.0\Newtonsoft.Json.dll

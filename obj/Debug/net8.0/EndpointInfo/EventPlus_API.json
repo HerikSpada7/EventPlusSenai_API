@@ -791,17 +791,21 @@
         "properties": {
           "idComentarioEvento": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "descricao": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": ""
           },
           "exibe": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": ""
           },
           "idUsuario": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "usuario": {
@@ -809,13 +813,15 @@
           },
           "idEvento": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "evento": {
             "$ref": "#/components/schemas/Eventos"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": ""
       },
       "Eventos": {
         "required": [
@@ -827,22 +833,27 @@
         "properties": {
           "idEvento": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "dataEvento": {
             "type": "string",
+            "description": "",
             "format": "date-time"
           },
           "nomeEvento": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": ""
           },
           "descricao": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": ""
           },
           "idTipoEvento": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "tiposEvento": {
@@ -850,6 +861,7 @@
           },
           "idInstituicao": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "instituicao": {
@@ -859,7 +871,8 @@
             "$ref": "#/components/schemas/Presencas"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": ""
       },
       "Instituicoes": {
         "required": [
@@ -871,23 +884,28 @@
         "properties": {
           "idInstituicao": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "cnpj": {
             "maxLength": 14,
             "minLength": 0,
-            "type": "string"
+            "type": "string",
+            "description": ""
           },
           "endereco": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": ""
           },
           "nomeFantasia": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": ""
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": ""
       },
       "LoginDTO": {
         "required": [
@@ -898,14 +916,17 @@
         "properties": {
           "email": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": ""
           },
           "senha": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": ""
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": ""
       },
       "Presencas": {
         "required": [
@@ -917,13 +938,16 @@
         "properties": {
           "idPresencaEvento": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "situacao": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": ""
           },
           "idUsuario": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "usuario": {
@@ -931,13 +955,15 @@
           },
           "idEvento": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "evento": {
             "$ref": "#/components/schemas/Eventos"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": ""
       },
       "TiposEventos": {
         "required": [
@@ -947,14 +973,17 @@
         "properties": {
           "idTipoEvento": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "tituloTipoEvento": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": ""
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": ""
       },
       "TiposUsuarios": {
         "required": [
@@ -964,14 +993,17 @@
         "properties": {
           "idTipoUsuario": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "tituloTipoUsuario": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": ""
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": ""
       },
       "Usuarios": {
         "required": [
@@ -984,30 +1016,36 @@
         "properties": {
           "idUsuario": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "nome": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": ""
           },
           "email": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": ""
           },
           "senha": {
             "maxLength": 60,
             "minLength": 5,
-            "type": "string"
+            "type": "string",
+            "description": ""
           },
           "idTipoUsuario": {
             "type": "string",
+            "description": "",
             "format": "uuid"
           },
           "tipoUsuario": {
             "$ref": "#/components/schemas/TiposUsuarios"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": ""
       }
     },
     "securitySchemes": {

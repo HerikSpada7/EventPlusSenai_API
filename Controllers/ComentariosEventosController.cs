@@ -1,31 +1,61 @@
-﻿using EventPlus_API.Domains;
+﻿using Azure;
+using Azure.AI.ContentSafety;
+using EventPlus_API.Domains;
 using EventPlus_API.Interfaces;
+using EventPlus_API.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.ResponseCompression;
 
 namespace EventPlus_API.Controllers
 {
+    /// <summary>
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
+
     public class ComentariosEventoController : ControllerBase
     {
         private readonly IComentariosEventosRepository _comentarioEventoRepository;
+        private readonly ContentSafetyClient _contentSafetyClient;
 
-        public ComentariosEventoController(IComentariosEventosRepository comentarioEventoRepository)
+        /// <summary>
+        /// </summary>
+        public ComentariosEventoController(ContentSafetyClient  contentSafetyClient,IComentariosEventosRepository comentarioEventoRepository)
         {
             _comentarioEventoRepository = comentarioEventoRepository;
+            _contentSafetyClient = contentSafetyClient;
         }
 
         /// <summary>
         /// Endpoint para cadastrar novo comentario do evento
         /// </summary>
         [HttpPost]
-        public IActionResult Post(ComentariosEventos novoComentarioEvento)
+        public async Task<IActionResult> Post(ComentariosEventos novoComentarioEvento)
         {
             try
             {
+                if(string.IsNullOrEmpty(novoComentarioEvento.Descricao))
+                {
+                    return BadRequest("O texto a ser moderado não pode estar vazio!");
+                }
+
+                //criar objeto de análise do content safety
+                var request = new AnalyzeTextOptions(novoComentarioEvento.Descricao);
+
+                //chamar a API do content Safety
+                Response<AnalyzeTextResult> response = await _contentSafetyClient.AnalyzeTextAsync(request);
+
+                //verificar se o texto analisado tem alguma severidade(termos ofensivos)
+                bool temConteudoImproprio = response.Value.CategoriesAnalysis.Any(c => c.Severity > 8);
+
+                //se o conteúdo for impróprio, não exibe, caso contrário, exibe
+                novoComentarioEvento.Exibe = !temConteudoImproprio;
+
+                //cadastra de fato o comentário
                 _comentarioEventoRepository.Cadastrar(novoComentarioEvento);
-                return Created();
+
+                return Ok();
             }
             catch (Exception error)
             {
@@ -34,7 +64,7 @@ namespace EventPlus_API.Controllers
         }
 
         /// <summary>
-        /// Endpoint para deletar novo comentario do evento
+        /// Endpoint para deletar o comentario do evento por ID
         /// </summary>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
@@ -42,16 +72,35 @@ namespace EventPlus_API.Controllers
             try
             {
                 _comentarioEventoRepository.Deletar(id);
+
                 return NoContent();
             }
-            catch (Exception error)
+            catch (Exception e)
             {
-                return BadRequest(error.Message);
+                return BadRequest(e.Message);
+            }
+        }
+
+
+        /// <summary>
+        /// Endpoint para buscar o comentario do evento por ID
+        /// </summary>
+        [HttpGet("ListarSomenteExibe")]
+        public IActionResult GetExibe(Guid id)
+        {
+            try
+            {
+                return Ok(_comentarioEventoRepository.ListarSomenteExibe(id));
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
         /// <summary>
-        /// Endpoint para listar comentarios do evento
+        /// Endpoint para listar o comentario do evento por ID
         /// </summary>
         [HttpGet]
         public IActionResult Get(Guid id)
@@ -60,26 +109,27 @@ namespace EventPlus_API.Controllers
             {
                 return Ok(_comentarioEventoRepository.Listar(id));
             }
-            catch (Exception error)
+            catch (Exception)
             {
-                return BadRequest(error.Message);
+
+                throw;
             }
         }
 
         /// <summary>
-        /// Endpoint para buscar por id o comentario do usuario do evento
+        /// Endpoint para buscar o comentario do evento por ID
         /// </summary>
-        [HttpGet("BuscarPorIdUsuario/{UsuarioID},{EventoID}")]
-        public IActionResult GetById(Guid UsuarioID, Guid EventoID)
+        [HttpGet("BuscarPorIdUsuario")]
+        public IActionResult GetByIdUser(Guid idUsuario, Guid idEvento)
         {
             try
             {
-                ComentariosEventos novoComentarioEvento = _comentarioEventoRepository.BuscarPorIdUsuario(UsuarioID, EventoID);
-                return Ok(novoComentarioEvento);
+                return Ok(_comentarioEventoRepository.BuscarPorIdUsuario(idUsuario, idEvento));
             }
-            catch (Exception error)
+            catch (Exception)
             {
-                return BadRequest(error.Message);
+
+                throw;
             }
         }
     }

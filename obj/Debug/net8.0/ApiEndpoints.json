@@ -245,7 +245,7 @@
         "IsRequired": true
       },
       {
-        "Name": "presenca",
+        "Name": "presencas",
         "Type": "EventPlus_API.Domains.Presencas",
         "IsRequired": true
       }

@@ -4,6 +4,14 @@
         <name>EventPlus_API</name>
     </assembly>
     <members>
+        <member name="T:EventPlus_API.Controllers.ComentariosEventoController">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Controllers.ComentariosEventoController.#ctor(Azure.AI.ContentSafety.ContentSafetyClient,EventPlus_API.Interfaces.IComentariosEventosRepository)">
+            <summary>
+            </summary>
+        </member>
         <member name="M:EventPlus_API.Controllers.ComentariosEventoController.Post(EventPlus_API.Domains.ComentariosEventos)">
             <summary>
             Endpoint para cadastrar novo comentario do evento
@@ -117,6 +125,342 @@
         <member name="M:EventPlus_API.Controllers.TiposEventosController.Get(System.Guid)">
             <summary>
             Endpoint para buscar tipo do evento por Id
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Domains.ComentariosEventos">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.ComentariosEventos.IdComentarioEvento">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.ComentariosEventos.Descricao">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.ComentariosEventos.Exibe">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.ComentariosEventos.IdUsuario">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.ComentariosEventos.Usuario">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.ComentariosEventos.IdEvento">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.ComentariosEventos.Evento">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Domains.Eventos">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Eventos.IdEvento">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Eventos.DataEvento">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Eventos.NomeEvento">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Eventos.Descricao">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Eventos.IdTipoEvento">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Eventos.TiposEvento">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Eventos.IdInstituicao">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Eventos.Instituicao">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Eventos.Presencas">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Domains.Instituicoes">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Instituicoes.IdInstituicao">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Instituicoes.CNPJ">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Instituicoes.Endereco">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Instituicoes.NomeFantasia">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Domains.Presencas">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Presencas.IdPresencaEvento">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Presencas.Situacao">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Presencas.IdUsuario">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Presencas.Usuario">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Presencas.IdEvento">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Presencas.Evento">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Domains.TiposEventos">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.TiposEventos.IdTipoEvento">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.TiposEventos.TituloTipoEvento">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Domains.TiposUsuarios">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.TiposUsuarios.IdTipoUsuario">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.TiposUsuarios.TituloTipoUsuario">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Domains.Usuarios">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Usuarios.IdUsuario">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Usuarios.Nome">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Usuarios.Email">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Usuarios.Senha">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Usuarios.IdTipoUsuario">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.Domains.Usuarios.TipoUsuario">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.DTO.LoginDTO">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.DTO.LoginDTO.email">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:EventPlus_API.DTO.LoginDTO.senha">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Interfaces.IComentariosEventosRepository">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IComentariosEventosRepository.Cadastrar(EventPlus_API.Domains.ComentariosEventos)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IComentariosEventosRepository.Deletar(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IComentariosEventosRepository.Listar(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IComentariosEventosRepository.BuscarPorIdUsuario(System.Guid,System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IComentariosEventosRepository.ListarSomenteExibe(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Interfaces.IEventosRepository">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IEventosRepository.Cadastrar(EventPlus_API.Domains.Eventos)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IEventosRepository.Deletar(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IEventosRepository.Listar">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IEventosRepository.ListarPorId(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IEventosRepository.ProximosEventos">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IEventosRepository.BuscarPorId(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IEventosRepository.Atualizar(System.Guid,EventPlus_API.Domains.Eventos)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Interfaces.IPresencasRepository">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IPresencasRepository.Deletar(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IPresencasRepository.Listar">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IPresencasRepository.BuscarPorId(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IPresencasRepository.Atualizar(System.Guid,EventPlus_API.Domains.Presencas)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IPresencasRepository.ListarMinhas(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IPresencasRepository.Inscrever(EventPlus_API.Domains.Presencas)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Interfaces.ITiposEventosRepository">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.ITiposEventosRepository.Cadastrar(EventPlus_API.Domains.TiposEventos)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.ITiposEventosRepository.Deletar(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.ITiposEventosRepository.Listar">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.ITiposEventosRepository.BuscarPorId(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.ITiposEventosRepository.Atualizar(System.Guid,EventPlus_API.Domains.TiposEventos)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Interfaces.ITiposUsuariosRepository">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.ITiposUsuariosRepository.Cadastrar(EventPlus_API.Domains.TiposUsuarios)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.ITiposUsuariosRepository.Deletar(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.ITiposUsuariosRepository.Listar">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.ITiposUsuariosRepository.BuscarPorId(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.ITiposUsuariosRepository.Atualizar(System.Guid,EventPlus_API.Domains.TiposUsuarios)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Interfaces.IUsuarioRepository">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IUsuarioRepository.Cadastrar(EventPlus_API.Domains.Usuarios)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IUsuarioRepository.Listar">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IUsuarioRepository.BuscarPorId(System.Guid)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Interfaces.IUsuarioRepository.BuscarPorEmailESenha(System.String,System.String)">
+            <summary>
             </summary>
         </member>
         <member name="T:EventPlus_API.Migrations.EventPlus_API">
@@ -349,6 +693,18 @@
         <member name="M:EventPlus_API.Repositories.UsuariosRepository.Listar">
             <summary>
             Repositório para gerenciamento dos usuarios
+            </summary>
+        </member>
+        <member name="T:EventPlus_API.Utils.Criptografia">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Utils.Criptografia.GerarHash(System.String)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:EventPlus_API.Utils.Criptografia.CompararHash(System.String,System.String)">
+            <summary>
             </summary>
         </member>
     </members>

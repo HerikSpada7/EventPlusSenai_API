@@ -6,10 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
 	<RootNamespace>EventPlus_API</RootNamespace>  
 	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <UserSecretsId>50768ab2-59e3-404d-add2-56cc51196e8c</UserSecretsId>
   </PropertyGroup>
 	
 
   <ItemGroup>
+    <PackageReference Include="Azure.AI.ContentSafety" Version="1.0.0" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.13" />
     <PackageReference Include="Microsoft.Azure.CognitiveServices.ContentModerator" Version="2.0.0" />
